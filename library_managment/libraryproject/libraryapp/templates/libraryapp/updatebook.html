@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>deletebook</title>
+</head>
+<body>
+{% extends 'libraryapp/adminhome.html'%}
+{% block content %}
+<form method="post" action="/libraryapp/ubook/">
+    {%csrf_token %}
+ <table border="5">
+ <tr>
+        <td>Book_Name</td>
+        <td>Author-Name</td>
+        <td>Book-price</td>
+        <td>Book-Location</td>
+ </tr>
+
+    <tr>
+        <td><input type="text" name="bname" value="{{bookobj.bookname}}"/></td>
+        <td><input type="text" name="aname" value="{{bookobj.Authorname}}"/></td>
+        <td><input type="text" name="bookprice" value="{{bookobj.bookprice}}"/></td>
+        <td><input type="text" name="booklocation" value="{{bookobj.booklocation}}"/></td>
+        <td colspan="2">
+        <input type="submit" name="update"/></td>
+    </tr>
+{% endblock %}
+</table>
+</form>
+</body>
+</html>

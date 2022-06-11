@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>updatebook</title>
+</head>
+<body>
+{% extends 'libraryapp/adminhome.html' %}
+{% block content %}
+<form method="post" action="/libraryapp/bookupdate/">
+      {%csrf_token %}
+    <table border = "1">
+        <tr>
+             <td>Book_Name</td>
+            <td><input type="text" name="bname" ></td>
+        </tr>
+        <tr>
+             <td>Author_Name</td>
+            <td><input type="text" name="aname" ></td>
+        </tr>
+        <tr>
+             <td>Book_Price</td>
+            <td><input type="text" name="bookprice" ></td>
+        </tr>
+        <tr>
+             <td>Book_location</td>
+            <td><input type="text" name="booklocation" ></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="register" ></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
+</body>
+</html>

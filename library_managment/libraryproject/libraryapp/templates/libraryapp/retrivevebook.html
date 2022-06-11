@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>retrivevebook</title>
+</head>
+<body>
+{% extends 'libraryapp/adminhome.html' %}
+{% block content %}
+<table border="1">
+    <tr>
+        <td>Book_Name</td>
+        <td>Author-Name</td>
+        <td>Book-price</td>
+        <td>Book-Location</td>
+    </tr>
+    {% for item in bookobj %}
+     <tr>
+        <td>{{item.bookname}}</td>
+        <td>{{item.Authorname}}</td>
+        <td>{{item.bookprice}}</td>
+         <td>{{item.booklocation}}</td>
+         <td><a href="/libraryapp/updatebook/{{item.bookname}}/">update</a></td>
+         <td><a href="/libraryapp/deletebook/{{item.bookname}}/">Delete</a></td>
+    </tr>
+    {%endfor%}
+</table>
+{% endblock %}
+</body>
+</html>
